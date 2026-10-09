@@ -10,16 +10,24 @@ Deisenroth, Faisal & Ong. **Free PDF: [mml-book.github.io](https://mml-book.gith
 Written for exactly this situation — a coder filling the math gap, every concept motivated toward ML rather than taught as pure math. **Do NOT read cover to cover.** Read only the sections mapped below; the rest of the book is Phase 1+ territory or beyond scope.
 
 ### Concept → chapter map (read in this order)
-| Phase 0 concept | mml-book section |
-|---|---|
-| Vectors/matrices refresh (only if rusty) | **Ch. 2 — Linear Algebra** (skim 2.1–2.4) |
-| Gradients / chain rule refresh | **Ch. 5 — Vector Calculus** (5.1–5.2; you'll BUILD this in Phase 1, so keep it light) |
-| Probability, random variables, expectation | **Ch. 6 — Probability and Distribution** (6.1–6.4) |
-| The Gaussian (1-D and multivariate) | **Ch. 6.5 — Gaussian Distribution** |
-| Maximum likelihood | **Ch. 6.3 + 8.3** (MLE as a learning principle) |
-| KL divergence *(non-negotiable — heart of the VAE & Dreamer losses)* | **Ch. 6.4.3** + info-theory notes; backfill with the companions below if the book is thin here |
+mml-book ch. 6 is the backbone. **Where it's strong, use it; where it's thin (KL), use the dedicated source in the next column — don't force the book to cover KL, it doesn't do it well.**
 
-> KL divergence is the one place mml-book is a little light. If 6.4.3 doesn't make it click, use *Deep Learning* ch. 3.13 (Goodfellow, [free](https://www.deeplearningbook.org/)) or the StatQuest KL video — then confirm it with your own KL-vs-distance plot.
+| Phase 0 concept | Where to read it |
+|---|---|
+| Vectors/matrices refresh (only if rusty) | mml-book **Ch. 2** (skim 2.1–2.4) |
+| Gradients / chain rule refresh | mml-book **Ch. 5.1–5.2** (keep light — you BUILD this in Phase 1) |
+| Probability, random variables, expectation | mml-book **Ch. 6.1–6.4** |
+| The Gaussian (1-D and multivariate) | mml-book **Ch. 6.5 — Gaussian Distribution** |
+| Maximum likelihood | mml-book **Ch. 6.3** (sum/product rules) + the MLE treatment in **Ch. 8.3** |
+| **KL divergence** *(the gap — mml-book barely covers it)* | **not mml-book** → see the KL block below |
+
+### KL divergence — the one you source elsewhere
+KL is the heart of the VAE and Dreamer losses, so learn it properly from a source that actually derives it. In order of preference:
+1. **Goodfellow, *Deep Learning*, §3.13 "Information Theory"** — defines entropy → cross-entropy → KL cleanly, and states the asymmetry. [Free](https://www.deeplearningbook.org/contents/prob.html).
+2. **StatQuest "Entropy / KL divergence" videos** — if the book is too dense; best plain-language intuition.
+3. **The Gaussian-vs-Gaussian KL derivation** — the *exact* closed form you'll reuse in the VAE. Lilian Weng's "From Autoencoder to Beta-VAE" post derives it; you'll meet it again in Phase 2, so even a first skim now pays off.
+
+Then make it yours: write the script that plots KL(p‖q) rising as you slide two Gaussians apart, and show KL(p‖q) ≠ KL(q‖p). The plot IS your understanding.
 
 ## Companions (intuition + the thin spots)
 - **3Blue1Brown** — "Essence of Linear Algebra" + probability videos. Watch alongside; makes the book's symbols move.
