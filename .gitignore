@@ -1,0 +1,22 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# ML artifacts — never commit these
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+data/
+datasets/
+MNIST/
+*.npz
+runs/
+wandb/
+checkpoints/
