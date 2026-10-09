@@ -1,25 +1,34 @@
 # Phase 0 — Math Floor (surgical 20%)
 
-The load-bearing math every world-models paper assumes. Install it ONCE, properly, with code attached so it registers. CPU only. No calculus/stats course — just the specific 20% the later builds use.
+The load-bearing math every world-models paper assumes. Install it ONCE, properly, with code attached so it registers. CPU only. No full stats course — just the specific 20% the later builds use.
 
-**Method:** never learn a concept abstractly. For each concept, read a little, then write a tiny script that makes it *visible* (sample it, plot it, watch it change). The script is the proof you understood it.
+**Method:** never learn a concept abstractly. For each concept, read the mapped section, then write a tiny script that makes it *visible* (sample it, plot it, watch it change). The script is the proof you understood it.
 
-## Concepts to own (the whole phase)
-- **Random variables & expectation** — what E[X] is; why "sample and average" estimates it.
-- **The Gaussian** — 1-D (what μ and σ each control) and multivariate (diagonal covariance; why a latent `z` is "a point in a Gaussian").
-- **Sampling & the law of large numbers** — why averaging many samples approximates an expectation (Monte Carlo).
-- **Maximum likelihood (MLE)** — "likelihood of data under a model"; why the MLE of a Gaussian's mean is just the sample mean.
-- **KL divergence** — what KL(p‖q) measures ("extra surprise from using q when truth is p"); why it's asymmetric. *This one is non-negotiable — it's the heart of the VAE and Dreamer losses later.*
-- **Gradients / chain rule** — just a refresh. You'll BUILD backprop in Phase 1, so don't over-invest here.
+## Primary book — *Mathematics for Machine Learning*
+Deisenroth, Faisal & Ong. **Free PDF: [mml-book.github.io](https://mml-book.github.io/)** (direct: [mml-book.pdf](https://mml-book.github.io/book/mml-book.pdf)).
+
+Written for exactly this situation — a coder filling the math gap, every concept motivated toward ML rather than taught as pure math. **Do NOT read cover to cover.** Read only the sections mapped below; the rest of the book is Phase 1+ territory or beyond scope.
+
+### Concept → chapter map (read in this order)
+| Phase 0 concept | mml-book section |
+|---|---|
+| Vectors/matrices refresh (only if rusty) | **Ch. 2 — Linear Algebra** (skim 2.1–2.4) |
+| Gradients / chain rule refresh | **Ch. 5 — Vector Calculus** (5.1–5.2; you'll BUILD this in Phase 1, so keep it light) |
+| Probability, random variables, expectation | **Ch. 6 — Probability and Distribution** (6.1–6.4) |
+| The Gaussian (1-D and multivariate) | **Ch. 6.5 — Gaussian Distribution** |
+| Maximum likelihood | **Ch. 6.3 + 8.3** (MLE as a learning principle) |
+| KL divergence *(non-negotiable — heart of the VAE & Dreamer losses)* | **Ch. 6.4.3** + info-theory notes; backfill with the companions below if the book is thin here |
+
+> KL divergence is the one place mml-book is a little light. If 6.4.3 doesn't make it click, use *Deep Learning* ch. 3.13 (Goodfellow, [free](https://www.deeplearningbook.org/)) or the StatQuest KL video — then confirm it with your own KL-vs-distance plot.
+
+## Companions (intuition + the thin spots)
+- **3Blue1Brown** — "Essence of Linear Algebra" + probability videos. Watch alongside; makes the book's symbols move.
+- **StatQuest (Josh Starmer)** — short explainers for expectation, Gaussians, likelihood, KL. Use for any concept that stays abstract.
+- **Deep Learning (Goodfellow), ch. 3** — the fallback reference, especially for KL / information theory.
+- `scipy.stats`, `numpy.random`, `matplotlib` — your lab bench. (mml-book also ships [Jupyter tutorials](https://mml-book.github.io/) for linear regression / PCA / GMM if you want worked code.)
 
 ## Build (make each concept concrete)
-A handful of ≤30-line scripts, one per concept — e.g. die-roll running-mean convergence, Gaussian pdf plots, a 2-D Gaussian scatter you stretch via covariance, a Monte-Carlo estimate of π, a KL-vs-distance plot. Keep them in this folder.
-
-## References (pull as needed, don't read cover to cover)
-- **3Blue1Brown** — "Essence of Linear Algebra" + the probability videos. Best intuition-first source for exactly this 20%.
-- **StatQuest (Josh Starmer)** — short YouTube explainers for expectation, Gaussians, likelihood, KL. Watch only the ones you need.
-- **Deep Learning (Goodfellow, Bengio, Courville), ch. 3 "Probability and Information Theory"** — the reference for this phase. Read §3.1–3.13; it covers RVs, expectation, Gaussians, MLE, and KL in ~15 pages. [Free online](https://www.deeplearningbook.org/).
-- `scipy.stats`, `numpy.random`, `matplotlib` — your lab bench.
+A handful of ≤30-line scripts, one per concept — die-roll running-mean convergence, Gaussian pdf plots, a 2-D Gaussian scatter you stretch via covariance, a Monte-Carlo estimate of π, a KL-vs-distance plot. Keep them in this folder.
 
 ## 🎯 Milestone test 0 (ping Jeremy when ready)
 In writing + plots:

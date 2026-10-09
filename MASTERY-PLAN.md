@@ -32,9 +32,10 @@ Theory/build ratio shifts from ~40/60 early to ~20/80 late.
 **Concepts to own:** random variables & expectation · the Gaussian (1-D μ/σ, and multivariate / diagonal covariance) · sampling & law of large numbers (Monte Carlo) · maximum likelihood · **KL divergence** (and why it's asymmetric) · a chain-rule refresh.
 
 **References:**
-- *Deep Learning* (Goodfellow/Bengio/Courville), **ch. 3 "Probability and Information Theory"** — the anchor read, ~15 pages, covers all of the above. [Free online](https://www.deeplearningbook.org/).
+- **PRIMARY: *Mathematics for Machine Learning* (Deisenroth/Faisal/Ong) — free [PDF](https://mml-book.github.io/book/mml-book.pdf).** Read only ch. 6 (Probability & Distribution, incl. 6.5 Gaussian), ch. 5.1–5.2 (calculus refresh), ch. 2 if linear algebra is rusty. Full concept→chapter map in `phase0-math/README.md`. Do NOT read cover to cover.
 - **3Blue1Brown** — "Essence of Linear Algebra" + probability videos (intuition).
 - **StatQuest** — short explainers for expectation, Gaussians, likelihood, KL.
+- *Deep Learning* (Goodfellow) ch. 3.13 — fallback specifically for KL (mml-book is thin there). [Free](https://www.deeplearningbook.org/).
 
 **Build:** a few ≤30-line scripts that make each concept visible (die-roll mean convergence, Gaussian pdf plots, 2-D Gaussian scatter, Monte-Carlo π, KL-vs-distance).
 
